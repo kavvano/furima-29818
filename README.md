@@ -8,7 +8,6 @@
 | nickname              | string | null: false |
 | email                 | string | null: false |
 | password              | string | null: false |
-| password_confirmation | string | null: false |
 | last_name             | string | null: false |
 | first_name            | string | null: false |
 | last_name_kana        | string | null: false |
@@ -32,7 +31,7 @@
 | area_id         | integer    | null: false                    |
 | days_id         | integer    | null: false                    |
 | price           | integer    | null: false                    |
-| user_id         | references | null: false, foreign_key: true |
+| user            | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -42,10 +41,10 @@
 
 ## links テーブル
 
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| user_id | references | null: false, foreign_key: true |
-| item_id | references | null: false, foreign_key: true |
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| item   | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -63,7 +62,7 @@
 | address       | string     | null: false                    |
 | building      | string     |                                |
 | cell_num      | string     | null: false                    |
-| link_id       | references | null: false, foreign_key: true |
+| link          | references | null: false, foreign_key: true |
 
 ### Association
 
