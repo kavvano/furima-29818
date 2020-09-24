@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
 
   describe 'ユーザー新規登録' do
     context "新規登録がうまく行くとき" do
-      it "nicknameとemail、password、first_name、last_name、first_name_kana、last_name_kana、birthdayが存在すれば登録できる" do
+      it "nicknameとemail、password、password_confirmation、first_name、last_name、first_name_kana、last_name_kana、birthdayが存在すれば登録できる" do
       end
       it "passwordが6文字以上であれば登録できる" do
       end
@@ -32,6 +32,8 @@ RSpec.describe User, type: :model do
       it "passwordが5文字以下では登録できない" do
       end
       it "passwordが半角英数字混合でない場合、登録できない" do
+      end
+      it "passwordが入力されてもpassword_confirmationが空では登録できない" do
       end
       it "first_nameが空では登録できない" do
       end
