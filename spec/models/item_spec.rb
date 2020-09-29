@@ -7,7 +7,7 @@ RSpec.describe Item, type: :model do
 
   describe '商品出品' do
     context '出品がうまく行くとき' do
-      it 'imageとtitle、explanation、category_id、status_id、delivery_id、area_id、days_id、price、user_idが存在すれば出品できる' do
+      it 'imageとtitle、explanation、category_id、status_id、delivery_id、area_id、day_id、price、user_idが存在すれば出品できる' do
         expect(@item).to be_valid
       end
       it '商品名が40文字以内であれば出品できる' do
@@ -34,8 +34,8 @@ RSpec.describe Item, type: :model do
         @item.area_id = 48
         expect(@item).to be_valid
       end
-      it 'days_idが2〜4であれば出品できる' do
-        @item.days_id = 4
+      it 'day_idが2〜4であれば出品できる' do
+        @item.day_id = 4
         expect(@item).to be_valid
       end
       it 'priceが300〜9999999であれば出品できる' do
@@ -80,8 +80,8 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include('Area must be other than 1')
       end
-      it 'days_idが1だと出品できない' do
-        @item.days_id = 1
+      it 'day_idが1だと出品できない' do
+        @item.day_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include('Days must be other than 1')
       end
