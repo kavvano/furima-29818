@@ -45,8 +45,6 @@ class ItemsController < ApplicationController
   end
 
   def check_user
-    if current_user.id != @item.user_id
-      render "show"
-    end
+    render 'show' if current_user.id != @item.user_id
   end
 end
