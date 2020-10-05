@@ -31,6 +31,7 @@
 | area_id         | integer    | null: false                    |
 | day_id          | integer    | null: false                    |
 | price           | integer    | null: false                    |
+| sold_out        | boolean    | default: false, null: false    |
 | user            | references | null: false, foreign_key: true |
 
 ### Association
