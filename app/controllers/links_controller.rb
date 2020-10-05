@@ -1,6 +1,8 @@
 class LinksController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_item, only: [:index, :create]
+  before_action :set_item
+  before_action :check_user
+  before_action :check_sold_out
 
   def index
     @link_item = LinkItem.new
@@ -26,6 +28,18 @@ class LinksController < ApplicationController
 
   def set_item
     @item = Item.find(params[:item_id])
+  end
+
+  def check_user
+    if current_user.id == @item.user_id
+      redirect_to root_path
+    end
+  end
+
+  def check_sold_out
+    if @item.sold_out
+      redirect_to root_path
+    end
   end
 
   def pay_item
