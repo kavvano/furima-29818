@@ -39,8 +39,13 @@ RSpec.describe LinkItem, type: :model do
         @link_item.valid?
         expect(@link_item.errors.full_messages).to include("Post num can't be blank")
       end
-      it 'post_numが123-4567の形式でないと購入できない' do
+      it 'post_numが7桁でも-（ハイフン）がないと購入できない' do
         @link_item.post_num = '1234567'
+        @link_item.valid?
+        expect(@link_item.errors.full_messages).to include('Post num is invalid')
+      end
+      it 'post_numが-（ハイフン）が含まれていても3桁4桁の組み合わせでないと購入できない' do
+        @link_item.post_num = '1234-567'
         @link_item.valid?
         expect(@link_item.errors.full_messages).to include('Post num is invalid')
       end
