@@ -7,7 +7,7 @@ RSpec.describe LinkItem, type: :model do
 
   describe '商品購入' do
     context '購入がうまく行くとき' do
-      it 'token、post_num、area_id、city、address、cell_numが存在すれば購入できる' do
+      it 'tokenとpost_num、area_id、city、address、cell_numが存在すれば購入できる' do
         expect(@link_item).to be_valid
       end
       it '郵便番号が123-4567の形式であれば購入できる' do
