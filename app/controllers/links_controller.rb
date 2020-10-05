@@ -31,15 +31,11 @@ class LinksController < ApplicationController
   end
 
   def check_user
-    if current_user.id == @item.user_id
-      redirect_to root_path
-    end
+    redirect_to root_path if current_user.id == @item.user_id
   end
 
   def check_sold_out
-    if @item.sold_out
-      redirect_to root_path
-    end
+    redirect_to root_path if @item.sold_out
   end
 
   def pay_item
