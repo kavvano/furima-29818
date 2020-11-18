@@ -1,5 +1,63 @@
 <%= render "shared/second-header"%>
 
+  <div class="test-box">
+    <div class="test">
+      <p class=test-mini-box>テストユーザー1</p>
+      <div class=test-mini-box>
+        <label>　 Eメール：</label>
+        <input id="copy1" type="text" value="kavvano@gmail.com" readonly>
+        <button onclick="cp1()">コピー</button><br>
+        <script>
+        function cp1(){
+          var txt = document.getElementById("copy1");
+          txt.select();
+          document.execCommand("Copy");
+        }
+        </script>
+      </div>
+
+      <div class=test-mini-box>
+        <label>パスワード：</label>
+        <input id="copy2" type="text" value="kavvano30" readonly>
+        <button onclick="cp2()">コピー</button>
+        <script>
+        function cp2(){
+          var txt = document.getElementById("copy2");
+          txt.select();
+          document.execCommand("Copy");
+        }
+        </script>
+      </div>
+
+      <p class=test-mini-box>テストユーザー2</p>
+      <div class=test-mini-box>
+        <label>　 Eメール：</label>
+        <input id="copy3" type="text" value="kawano@gmail.com" readonly>
+        <button onclick="cp3()">コピー</button><br>
+        <script>
+        function cp3(){
+          var txt = document.getElementById("copy3");
+          txt.select();
+          document.execCommand("Copy");
+        }
+        </script>
+      </div>
+
+      <div class=test-mini-box>
+        <label>パスワード：</label>
+        <input id="copy4" type="text" value="kawano30" readonly>
+        <button onclick="cp4()">コピー</button>
+        <script>
+        function cp4(){
+          var txt = document.getElementById("copy4");
+          txt.select();
+          document.execCommand("Copy");
+        }
+        </script>
+      </div>
+    </div>
+  </div>
+
 <%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true do |f| %>
 <div class='form-wrap'>
   <div class='form-header'>
@@ -7,6 +65,7 @@
       会員情報入力
     </h1>
   </div>
+
   <div class='login-flash-message'>
     <%= flash[:notice] %>
     <%= flash[:alert] %>
